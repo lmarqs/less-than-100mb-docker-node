@@ -15,6 +15,7 @@ jobs:
     - run: git fetch
     - if: github.ref != 'refs/heads/master'
       run: git branch master origin/master
+    - run: npm ci
     - run: npm run lint
     - run: npm run release
       env:
