@@ -18,4 +18,6 @@ jobs:
     - run: npm run lint
     - run: npm run release
       env:
-        GITHUB_TOKEN: ${{ secrets.PAY_GITHUB_TOKEN }}
+        DOCKER_USERNAME: lmarqs
+        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
