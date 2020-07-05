@@ -20,7 +20,7 @@
     "lint:docker-compose": "docker-compose config",
     "lint:eslint": "eslint --ext ts --ext js .",
     "lint:markdown": "markdownlint '**/*.md' --ignore node_modules",
-    "lint:yamllint": "yamllint '**/*.(yaml|yml)' --ignore=node_modules",
+    "lint:yamllint": "yamllint '**/*.{yaml,yml}' --ignore='node_modules/**/*'",
     "lint": "npm-run-all lint:*",
     "prebuild": "shx rm -rf dist",
     "release": "npx semantic-release",
