@@ -1,4 +1,4 @@
-export function useSearchParam(key: string){
-    const { searchParams } = new URL(location.toString());
-    return searchParams.get(key) ?? undefined;
+export function useSearchParam(key: string) {
+  const { searchParams } = new URL(window.location.toString());
+  return searchParams.get(key) ?? undefined;
 }

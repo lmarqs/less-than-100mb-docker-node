@@ -4,7 +4,7 @@ interface Props {
   email?: string;
   password?: string;
   check?: string;
-};
+}
 
 export const Form: React.FunctionComponent<Props> = ({ email, password, check }) => (
   <form autoComplete="off" method="get">
@@ -20,7 +20,7 @@ export const Form: React.FunctionComponent<Props> = ({ email, password, check })
         type="email"
       />
       <small id="email-help" className="form-text text-muted">
-        We'll never share your email with anyone else.
+        We&apos;ll never share your email with anyone else.
       </small>
     </div>
     <div className="form-group">

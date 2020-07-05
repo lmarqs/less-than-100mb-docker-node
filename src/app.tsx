@@ -1,17 +1,17 @@
-import React from "react";
-import { Form } from "./form";
-import { useSearchParam } from "./use-search-param";
+import React from 'react';
+import { Form } from './form';
+import { useSearchParam } from './use-search-param';
 
 export const App: React.FunctionComponent = () => {
-  const email = useSearchParam("email");
-  const password = useSearchParam("password");
-  const check = useSearchParam("check");
+  const email = useSearchParam('email');
+  const password = useSearchParam('password');
+  const check = useSearchParam('check');
 
   const alertItems = React.useMemo(
     () => Object.entries({ email, password, check })
       .filter(([key, value]) => value)
       .map(([key, value]) => `${key}: ${value}`),
-    [email, password, check]
+    [email, password, check],
   );
 
   return (
@@ -25,7 +25,7 @@ export const App: React.FunctionComponent = () => {
           <br />
           {!!alertItems.length && (
             <Card>
-              <List items={alertItems}></List>
+              <List items={alertItems} />
             </Card>
           )}
         </div>
@@ -40,14 +40,12 @@ const Card: React.FunctionComponent<React.PropsWithChildren<{}>> = ({ children }
   </div>
 );
 
-const List: React.FunctionComponent<{ items: Array<string> }> = ({ items }) => {
-  return (
-    <ul className="list-group">
-      {items.map((item, index) => (
-        <li className="list-group-item" key={index}>
-          {item}
-        </li>
-      ))}
-    </ul>
-  );
-};
+const List: React.FunctionComponent<{ items: Array<string> }> = ({ items }) => (
+  <ul className="list-group">
+    {items.map((item) => (
+      <li className="list-group-item" key={item}>
+        {item}
+      </li>
+    ))}
+  </ul>
+);
