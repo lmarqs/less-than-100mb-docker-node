@@ -12,7 +12,7 @@ RUN curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash 
     && npm prune --production \
     && /usr/local/bin/node-prune
 
-FROM node:14
+FROM node:14-alpine
 
 WORKDIR /app
 
